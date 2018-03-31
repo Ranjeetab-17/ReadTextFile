@@ -34,7 +34,7 @@ namespace ReadTextFile
                     Email_Status = line.Split(':')[1];
 
                 if (line.Contains("Short URL")) {
-                    Short_URL = line.Split(':')[2];
+                    Short_URL =string.Concat(line.Split(':')[1],":", line.Split(':')[2]);
                     obj = new FolioList() {
                         Folio=Folio,
                         Trans_Source=Trans_Source,
