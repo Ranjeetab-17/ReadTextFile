@@ -34,13 +34,13 @@ namespace ReadTextFile
                 var status = Console.ReadLine();
                 var result = status == "Y" || status == "N" ? objfoliolist.Where(m => m.Sms_Status.Trim().Equals(status)) : objfoliolist;
 
-                Console.WriteLine("Where To Save ? : ");
+                Console.Write("Where To Save ? : ");
                 var saveIn=Console.ReadLine();
                 StreamWriter str = new StreamWriter(saveIn);
                 
                 foreach (var item1 in result)
                 {
-                    str.WriteLine($"{item1.Folio}         {item1.Trans_Source}  {item1.Trans_Number}       {item1.Sms_Status}  {item1.Email_Status}    {item1.Short_URL}");
+                    str.WriteLine($"{item1.Folio}   {item1.Trans_Source}    {item1.Trans_Number}    {item1.Sms_Status}  {item1.Email_Status}");
                     Console.WriteLine($"{item1.Folio}         {item1.Trans_Source}  {item1.Trans_Number}       {item1.Sms_Status}  {item1.Email_Status}    {item1.Short_URL}");
                     counter++;
                 }
