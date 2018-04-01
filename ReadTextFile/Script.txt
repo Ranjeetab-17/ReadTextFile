@@ -1,0 +1,25 @@
+﻿ 
+CREATE TABLE #CheckLog
+  (  
+     Folio        NVARCHAR(1000),
+     Trans_Source NVARCHAR(1000),
+     Trans_Number NVARCHAR(1000),
+     Sms_Status   NVARCHAR(1000),
+	 EmailStatus Nvarchar(100),
+	 ShortUrl nvarchar(1000)    
+  )
+
+--select * from openrowset(Bulk N'D:\Log.txt',single_clob) as xyx
+ 
+BULK INSERT #CheckLog
+  FROM 'D:\Log.txt'
+  WITH
+    (
+      FieldTerminator='\t',
+      rowterminator = '\n',
+	  ErrorFile='D:\SqlErroLog.log'
+    )
+select * from #CheckLog
+
+DROP TABLE #CheckLog 
+ 

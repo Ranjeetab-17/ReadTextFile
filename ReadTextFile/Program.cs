@@ -40,7 +40,7 @@ namespace ReadTextFile
                 
                 foreach (var item1 in result)
                 {
-                    str.WriteLine($"{item1.Folio}   {item1.Trans_Source}    {item1.Trans_Number}    {item1.Sms_Status}  {item1.Email_Status}");
+                    str.WriteLine($"{item1.Folio}\t{item1.Trans_Source}\t{item1.Trans_Number}\t{item1.Sms_Status}\t{item1.Email_Status}\t{item1.Short_URL}");
                     Console.WriteLine($"{item1.Folio}         {item1.Trans_Source}  {item1.Trans_Number}       {item1.Sms_Status}  {item1.Email_Status}    {item1.Short_URL}");
                     counter++;
                 }
